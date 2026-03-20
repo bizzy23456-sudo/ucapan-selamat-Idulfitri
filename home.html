@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <title>Kartu Lebaran</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Arial', sans-serif;
+      background: #0d5c3b;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      color: white;
+      text-align: center;
+      overflow: hidden;
+    }
+
+    /* Efek animasi pada body */
+    @keyframes fadeIn {
+      0% {
+        opacity: 0;
+      }
+      100% {
+        opacity: 1;
+      }
+    }
+    body {
+      animation: fadeIn 1.5s ease-out;
+    }
+
+    /* Animasi untuk Card */
+    .card {
+      background: #0f6d46;
+      padding: 40px;
+      border-radius: 20px;
+      width: 90%;
+      max-width: 420px;
+      box-shadow: 0 10px 25px rgba(0,0,0,0.3);
+      transform: scale(0.8);
+      animation: scaleIn 1s ease-out forwards;
+    }
+
+    /* Card animasi */
+    @keyframes scaleIn {
+      0% {
+        transform: scale(0.8);
+        opacity: 0;
+      }
+      100% {
+        transform: scale(1);
+        opacity: 1;
+      }
+    }
+
+    h1 {
+      color: #ffd54f;
+      margin-bottom: 20px;
+      font-size: 32px;
+      animation: fadeUp 1.2s ease-out forwards;
+    }
+
+    /* Animasi untuk heading */
+    @keyframes fadeUp {
+      0% {
+        opacity: 0;
+        transform: translateY(10px);
+      }
+      100% {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    p {
+      margin-bottom: 20px;
+      font-size: 18px;
+      animation: fadeUp 1.5s ease-out forwards;
+    }
+
+    /* Button dengan animasi */
+    .btn {
+      background: #ffd54f;
+      color: black;
+      padding: 12px 30px;
+      border-radius: 30px;
+      text-decoration: none;
+      font-weight: bold;
+      display: inline-block;
+      transition: 0.3s;
+      margin-top: 30px;
+      font-size: 18px;
+      animation: bounceIn 1s ease-out;
+    }
+
+    /* Efek bounce untuk button */
+    @keyframes bounceIn {
+      0% {
+        transform: translateY(-30px);
+        opacity: 0;
+      }
+      50% {
+        transform: translateY(15px);
+      }
+      100% {
+        transform: translateY(0);
+        opacity: 1;
+      }
+    }
+
+    .btn:hover {
+      background: #ffca28;
+      transform: scale(1.1);
+      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+    }
+
+    .subtitle {
+      margin-top: 30px;
+      font-weight: bold;
+      font-size: 16px;
+      color: #ffd54f;
+      animation: fadeInUp 2s ease-out;
+    }
+
+    /* Subtitle animasi */
+    @keyframes fadeInUp {
+      0% {
+        opacity: 0;
+        transform: translateY(20px);
+      }
+      100% {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+  </style>
+</head>
+<body>
+
+<div class="card">
+  <h1>Assalamu'alaikum!</h1>
+  <p>Dari Keluarga Sejahtera</p>
+  
+  <!-- Button dengan ID -->
+  <a href="index.html" class="btn" id="openbtn">BUKA KARTU ✉️</a>
+
+</div>
+
+</body>
+</html>

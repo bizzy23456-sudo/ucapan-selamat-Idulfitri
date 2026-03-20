@@ -1,0 +1,217 @@
+/* Reset */
+* {
+  box-sizing: border-box;
+}
+
+body, html {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  overflow-x: hidden;
+}
+
+/* Video background */
+#bg-video {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  width: 100vw;          /* Lebar layar penuh */
+  height: 100vh;         /* Tinggi layar penuh */
+  z-index: -2;
+  transform: translate(-50%, -50%);
+  object-fit: cover;      /* Meniru background PPT */
+  object-position: center center; /* Fokus di tengah */
+  filter: brightness(0.5) saturate(1.2); /* Opsional: supaya teks terlihat */
+}
+
+
+
+.container {
+  max-width: 400px;
+  background-color: rgba(33, 74, 50, 0.8);
+  padding: 2rem 1.5rem;
+  border-radius: 20px;
+  box-shadow: 0 0 25px #f4c842aa;
+  text-align: center;
+  user-select: none;
+  margin: 3rem auto;
+  color: #f9f1c0;
+  position: relative;
+  z-index: 10;
+}
+
+.header-salam h1 {
+  font-size: 2.0rem;
+  margin-bottom: 0.3rem;
+  color: #f4c842;
+  font-weight: 900;
+  text-shadow:
+    0 0 5px #f4c842,
+    0 0 10px #f4c842;
+}
+
+.header-salam p {
+  margin-top: 0;
+  font-size: 1.2rem;
+  font-style: italic;
+  color: #fff9d2;
+  text-shadow: 0 0 4px #bba742aa;
+}
+
+.foto-frame {
+  margin: 2rem 0 1.8rem;
+  border: 6px solid #f4c842;
+  border-radius: 20px;
+  overflow: hidden;
+  width: 230px;
+  height: 230px;
+  margin-left: auto;
+  margin-right: auto;
+  box-shadow:
+    0 0 30px #f4c842cc,
+    inset 0 0 10px #f4c842bb;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.foto-frame:hover {
+  transform: scale(1.05);
+  box-shadow:
+    0 0 40px #fff07f,
+    inset 0 0 20px #fff07f;
+}
+
+.foto-frame {
+  width: 200px;       /* boleh diperbesar */
+  height: 260px;
+  margin: 2rem auto;
+  border: 6px solid #f4c842;
+  border-radius: 20px;
+  overflow: hidden;
+  background-color: #000; /* biar kalau ada kosong tetap bagus */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.foto-frame img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;   /* 🔥 ini kunci utama */
+}
+
+.arabic {
+  font-family: 'Scheherazade', 'Amiri', serif; /* font Arab */
+  font-size: 1.4rem;
+  color: #fffacd; /* warna cerah agar terbaca */
+  margin: 0.5rem 0; 
+  text-align: center;
+  direction: rtl;   /* teks Arab dari kanan ke kiri */
+  text-shadow: 0 0 5px #f4c842, 0 0 10px #f4c842aa;
+}
+
+.ucapan {
+  margin-bottom: 2rem;
+  opacity: 0;
+  animation: fadeIn 1.2s ease forwards;
+  animation-delay: 0.5s;
+}
+
+.ucapan h2 {
+  font-weight: 900;
+  font-size: 1.5rem;
+  margin-bottom: 0.5rem;
+  color: #ffe066;
+  line-height: 1.2;
+  text-shadow:
+    0 0 5px #ffe066,
+    0 0 15px #ffe066aa;
+}
+
+.ucapan .maaf {
+  font-style: italic;
+  font-weight: 700;
+  margin-bottom: 0.3rem;
+  font-size: 1.2rem;
+  color: #fff6bf;
+  text-shadow: 0 0 7px #bba742cc;
+}
+
+.ucapan .berkah {
+  font-weight: 500;
+  font-size: 1.1rem;
+  color: #e9d85dcc;
+}
+
+@keyframes fadeIn {
+  to {
+    opacity: 1;
+  }
+}
+
+.btn-glow {
+  background-color:#f4c842; 
+  border:none; 
+  color:#154734; 
+  font-weight:900; 
+  font-size:1.5rem; 
+  padding:0.9rem 2rem; 
+  border-radius:35px; 
+  cursor:pointer;
+  box-shadow:0 0 8px #f4c842, 0 0 15px #f4c84288, 0 0 20px #f4c84244; 
+  transition: all 0.3s ease-in-out; 
+  user-select:none; 
+  letter-spacing:1.3px;
+}
+.btn-glow:hover { 
+  box-shadow:0 0 12px #fff07f, 0 0 25px #fff07fcc, 0 0 35px #fff07fcc; 
+  transform:scale(1.07); 
+}
+.btn-glow:active { 
+  box-shadow:none; 
+  transform:scale(0.95); 
+}
+
+#takbir-audio {
+  display: none;
+}
+.confetti {
+  position: fixed;
+  width: 8px;
+  height: 8px;
+  background-color: red;
+  top: 0;
+  pointer-events: none;
+  z-index: 9999;
+  opacity: 0.9;
+  border-radius: 50%;
+  animation-name: fallConfetti;
+  animation-timing-function: linear;
+}
+
+@keyframes fallConfetti {
+  0% { transform: translateY(0) rotate(0deg); opacity:1; }
+  100% { transform: translateY(100vh) rotate(360deg); opacity:0; }
+}
+
+
+/* Responsive */
+@media (max-width: 420px) {
+  .container {
+    max-width: 90vw;
+    padding: 1.5rem 1rem;
+  }
+
+  .header-salam h1 {
+    font-size: 2rem;
+  }
+
+  .ucapan h2 {
+    font-size: 1.6rem;
+  }
+
+  .btn-glow {
+    font-size: 1.3rem;
+    padding: 0.8rem 1.5rem;
+  }
+}

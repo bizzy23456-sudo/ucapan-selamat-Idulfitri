@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Ucapan Hari Raya Idul Fitri - Background Video</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+<!-- Audio Takbir -->
+  <audio id="takbir-audio" src="takbir.mp3" preload="auto"></audio>
+<!-- Video Background -->
+<video autoplay muted loop playsinline id="bg-video">
+  <source src="background3.mp4" type="video/mp4" />
+  Video tidak didukung browser.
+</video>
+
+<div class="overlay"></div>
+
+<div class="container">
+
+
+  <div class="foto-frame">
+    <img src="keluarga.png" alt="Foto Keluarga" />
+  </div>
+
+  <div class="ucapan fade-in">
+    <p>Mengucapkan</p>
+    <h2>Selamat Hari Raya <br />Idul Fitri 1447 H</h2>
+
+    <!-- Teks Arab baru -->
+    <p class="arabic">تقبل الله منا ومنكم</p>
+
+    <p class="maaf">Mohon Maaf Lahir &amp; Batin</p>
+    <p class="berkah">Semoga allah paring barokah</p>
+</div>
+
+ <button id="parcelBtn" class="btn-glow">Buka Parcel 🎁</button>
+
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>
